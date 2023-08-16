@@ -1,0 +1,327 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.grid{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template: repeat(10,1fr) / repeat(17,1fr);
+    color:rgb(245, 200, 135)
+    
+}
+
+.finish{
+    position: absolute;
+    z-index: -100;
+    width: 100%;
+    height: 40%;
+    top: 0;
+    left: 0;
+}
+.finish img{
+    width: 100%;
+    height: 100%;
+}
+
+
+.startGameLayout{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(92, 50, 137, 0.8);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.landingContent{
+    width: 70%;
+    height: 70%;
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+}
+.landingContent .welcome{
+    text-transform: uppercase;
+    color: brown;
+}
+.landingContent .characters{
+    display: flex;
+    flex-direction: column;
+}
+.landingContent .characters .selectCharacter{
+    text-transform: uppercase;
+    color: rgb(27, 144, 23);
+    padding-bottom: 30px;
+    
+} 
+.landingContent .characters .charactersList{
+    display: flex;
+    justify-content: space-around;
+} 
+.landingContent .characters .charactersList .hero img{
+    width: 65px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.gameDifficulty{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+
+}
+.gameDifficulty h2{
+    text-transform: uppercase;
+    color: rgb(27, 144, 23);
+    padding-bottom: 30px;
+}
+.gameDifficulty .dificulties{
+    display:flex;
+    justify-content: space-between;
+    width: 60%;
+}
+.gameDifficulty .dificulties p{
+    width: 100px;
+    height: 45px;
+    font-size: 25px;
+    text-align: center;
+    background-color: brown;
+    line-height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: capitalize;
+    color:white;
+}
+#startGameBtn{
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 5px;
+    background-color: rgb(27, 144, 23);
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+.reload{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    border-radius: 4px;
+    background-color:rgb(27, 144, 23) ;
+    left: 25px;
+    top: 25px;
+    cursor: pointer;
+}
+.reload i{
+    color: white;
+    font-size: 30px;
+}
+.heroPointer{
+    position: absolute;
+    width: 50px;
+    top: 35%;
+    left: 30%;
+    animation: moveHorizontally;
+    animation-timing-function: linear;
+    animation-duration:1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+.diffPointer{
+    position: absolute;
+    width: 50px;
+    top:68%;
+    left: 10%;
+    animation: moveHorizontally;
+    animation-timing-function: linear;
+    animation-duration:1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+.bridge{
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    width: 120px;
+    transform: translate(-50%, -100%);
+    z-index: -100;
+}
+.wad{
+    position: absolute;
+    width: 80px;
+    left: 50px;
+    top: 30%;
+}
+.arrows{
+    position: absolute;
+    width: 80px;
+    left: 50px;
+    top: 50%;
+}
+.gameOver{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(137, 50, 122, 0.548);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.wonContnet h3{
+    font-size: 30px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+.score{
+    color: rgb(27, 144, 23);
+    padding: 10px;
+}
+.gameOver .gameOverContnet{
+    width: 50%;
+    height: 50%;
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+}
+.gameOver .gameOverContnet h2{
+    font-size: 60px;
+    color: brown;
+    
+}
+.gameOver .gameOverContnet .reastart{
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 5px;
+    background-color: rgb(27, 144, 23);
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+.won{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(137, 50, 122, 0.548);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.won .wonContnet{
+    width: 50%;
+    height: 50%;
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+}
+.won .wonContnet h2{
+    font-size: 60px;
+    color: rgb(27, 144, 23);
+    text-transform: capitalize;
+    
+}
+.won .wonContnet .reastart{
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 5px;
+    background-color: brown;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+.grow{
+    width:75px !important;
+}
+.none{
+    display: none !important;
+}
+.selected{
+    background-color: rgb(27, 144, 23) !important;
+}
+.denied{
+    pointer-events: none;
+}
+.count{
+    font-size: 650px;
+    user-select: none;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.three{
+    color: #00a4da;
+}
+.two{
+    color: #a000da;
+}
+.one{
+    color: #da2400;
+}
+@keyframes moving {
+    0%{
+        left:0;
+    }
+    100%{
+        left: 100%;
+    }
+}
+
+@keyframes rotateAnimation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+@keyframes moveHorizontally {
+    from {
+        transform: translateX(-5px);
+      }
+      to {
+        transform: translateX(5px);
+      }
+}

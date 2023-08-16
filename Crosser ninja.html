@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Crosser Ninja</title>
+</head>
+<body>
+    <div class="startGameLayout none">
+        <div class="landingContent">
+        <h1 class="welcome">welcome to the Crosser ninja game!</h1>
+        <div class="characters">
+                <h2 class="selectCharacter">select a character</h2>
+            <div class="charactersList">
+                <div class="hero hero1"><img src="./images/leonardo.png" alt=""></div>
+                <div class="hero hero2"><img src="./images/raphael.png" alt=""></div>
+                <div class="hero hero3"><img src="./images/donatello.png" alt=""></div>            </div>
+        </div>
+        <div class="gameDifficulty">
+            <h2>set the difficulty</h2>
+            <div class="dificulties">
+            <p data-number="1">easy</p>
+            <p data-number="2">normal</p>
+            <p data-number="3">midium</p>
+            <p data-number="4">hard</p>
+            </div>
+        </div>
+        <button id="startGameBtn">PLAY!</button>
+        <div class="reload">
+            <i class="fa-solid fa-rotate-right"></i>
+        </div>
+        <img src="./images/pointer.png" class="heroPointer pointer none">
+        <img src="./images/pointer.png" class="diffPointer pointer none">
+        <img src="./images/wad.png" class="wad">
+        <img src="./images/arrows.png" class="arrows">
+    </div>
+    </div>
+    <div class="grid "></div>
+    <div class="finish none"><img src="./images/finish.jpg" alt=""></div>
+    <img src="./images/bridge.jpg" class="bridge none">
+    <div class="gameOver none">
+        <div class="gameOverContnet">
+            <h2>Game Over!</h2>
+            <button class="reastart">play again</button>
+        </div>
+    </div>
+    <div class="won none">
+        <div class="wonContnet">
+            <h2>you won!</h2>
+            <h3>score: <span class="score">1</span></h3>
+            <button class="reastart">play again</button>
+        </div>
+    </div>
+    <div class="count none one">1</div>
+    <div class="count none two">2</div>
+    <div class="count none three">3</div>
+
+    <!-- <div class="heros">
+        <div class="hero hero1"><img src="/images/leonardo.png" alt=""></div>
+        <div class="hero hero2"><img src="/images/raphael.png" alt=""></div>
+        <div class="hero hero3"><img src="/images/donatello.png" alt=""></div>
+    </div> -->
+</body>
+<script src="script.js"></script>
+</html>
